@@ -56,10 +56,6 @@ const banHandler = async (ctx) => {
 		return reply('ℹ️ <b>Can\'t ban other admins.</b>', replyOptions);
 	}
 
-	if (message.reply_to_message) {
-		ctx.deleteMessage(message.reply_to_message.message_id);
-	}
-
 	if (userToBan.status === 'banned') {
 		return reply(
 			`🚫 ${displayUser(userToBan)} <b>is already banned.</b>`,

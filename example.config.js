@@ -10,17 +10,10 @@
  * For backwards compatibility, and because why not, it needs no extra code.
  */
 
-/**
- * Millisecond
- * String to be parsed by https://npmjs.com/millisecond,
- * or number of milliseconds. Pass 0 to remove immediately.
- * @typedef {( number | string )} ms
- */
-
 module.exports = {
 
 	/**
-	 * @type {!( number | string | (number|string)[] )}
+	 * @type {!( number | string )}
 	 * ID (number) or username (string) of master,
 	 * the person who can promote and demote admins,
 	 * and add the bot to groups.
@@ -34,16 +27,6 @@ module.exports = {
 	token: '',
 
 
-	chats: {
-
-		/**
-		 * @type {(number | false)}
-		 * Chat to send report notifications to.
-		 * Pass false to disable this feature.
-		 */
-		report: -1001148607297,
-	},
-
 	/**
 	 * @type {( 'all' | 'own' | 'none' )}
 	 * Which messages with commands should be deleted?
@@ -52,30 +35,14 @@ module.exports = {
 	deleteCommands: 'own',
 
 	/**
-	 * @type {(ms | false)} Millisecond
+	 * @type {( number | string | false )}
 	 * Timeout before removing join and leave messages.
-	 * [Look at typedef above for details.]
-	 * Pass false to disable this feature.
+	 * String to be parsed by https://npmjs.com/millisecond,
+	 * or number of milliseconds.
+	 * Pass 0 to remove immediately.
+	 * Pass false to never remove.
 	 */
 	deleteJoinsAfter: '2 minutes',
-
-	/**
-	 * @type {(ms | { auto: (ms | false), manual: (ms | false) } | false)}
-	 * Timeout before removing auto-warn messages.
-	 * [Look at typedef above for details.]
-	 * Pass an object with { auto, manual } for more granular control
-	 * over which messages get deleted
-	 * Pass false to disable this feature.
-	 */
-	deleteWarnsAfter: false,
-
-	/**
-	 * @type {(ms | false)}
-	 * Timeout before removing ban messages.
-	 * [Look at typedef above for details.]
-	 * Pass false to disable this feature.
-	 */
-	deleteBansAfter: false,
 
 	/**
 	 * @type {string[]}
@@ -93,13 +60,6 @@ module.exports = {
 	 * Pass false to disable this feature
 	 */
 	excludeLinks: [],
-
-	/**
-	 * @type {ms}
-	 * Don't count warns older than this value towards automatic ban.
-	 * [Look at typedef above for details.]
-	 */
-	expireWarnsAfter: Infinity,
 
 	/**
 	 * @type {InlineKeyboardMarkup}
